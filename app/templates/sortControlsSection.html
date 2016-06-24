@@ -1,0 +1,28 @@
+<div class="container" ng-controller="sortControlsCtrl">
+  <div class="row">
+    <div class="navbar-header page-scroll">
+      <a class="navbar-brand" href="#">
+        <span class="glyphicon glyphicon-thumbs-up"></span>
+        <span>{{labels.title}}</span>
+      </a>
+      <form class="navbar-form navbar-right">
+        <div class="form-group">
+          <label for="sortBy"><span>Sort by:</span></label>
+          <div class="btn-group" uib-dropdown>
+            <button id="sortByButton" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">{{sort.sorted.key}}<span class="caret"></span></button>
+            <ul role="menu" class="dropdown-menu" uib-dropdownmenu>
+              <li role="menuitem" ng-repeat="option in sort.options">
+                <a ng-click="sort.sortBy({key: option.key, value: option.value, type: option.type})">{{option.key}}</a>
+              </li>
+            </ul>
+          </div>
+          <label for="orderBy"><span>Order:</span></label>
+          <div class="btn-group">
+            <label class="btn" ng-class="sort.order === sort.orders[0] ? 'btn-primary' : 'btn-default'" ng-model="sort.order" uib-btn-radio="'Left'" ng-click="sort.setOrder(sort.orders[0])">{{sort.orders[0]}}</label>
+            <label class="btn" ng-class="sort.order === sort.orders[1] ? 'btn-primary' : 'btn-default'" ng-model="sort.order" uib-btn-radio="'Right'" ng-click="sort.setOrder(sort.orders[1])">{{sort.orders[1]}}</label>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

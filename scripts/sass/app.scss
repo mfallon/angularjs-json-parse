@@ -1,0 +1,265 @@
+/* main app.scss stylesheet */
+
+/* not importing bootstrap as it messes up font glyphicons so we manually declare it in the index
+@import 'bootstrap';
+*/
+
+@import "variables";
+
+@import "mixins";
+
+
+/* customisations - theme */
+html, body {
+  font-family: $base-font-family;
+  color: $body-color;
+  background-color: $body-bg-color;
+}
+
+.bg-curtain {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: $preloader-curtain-bg-color;
+  z-index: 9999;
+  opacity: 0.5;
+  color: #fff;
+  &.hide {
+    visibility: hidden;
+    display: none;
+  }
+  div.loadingWidget {
+    width: 50%;
+    margin: 220px auto;
+    h2, h3, h4, h5 {
+      text-align: center;
+      color: #fff;
+    }
+  }
+}
+
+
+header {
+  text-align: center;
+  background-color: $header-bg-color;
+  @include header-background();
+  .container {
+    padding-top: 64px;
+    padding-bottom: 0px;
+  }
+  form {
+    text-align: left;
+  }
+}
+
+
+.panel-body form {
+  .form-group:last-child {
+    margin-bottom: 0;
+    label {
+      @include vertical-align;
+    }
+  }
+}
+
+.title-row {
+  h2, h3, h4, h5 {
+    margin-top: 10;
+    margin-bottom: 20;
+    padding: 12px 0;
+    background-color: $title-bg-color;
+    color: $title-color;
+    text-align: center;
+  }
+  &.subtitle-row {
+    background-color: $subtitle-bg-color;
+    color: $subtitle-color;
+    h3 {
+      font-size: 1.2em;
+    }
+  }
+}
+
+/* id containers for specific styles */ 
+#navbarContainer {
+  background-color: $navbar-bg-color;
+  font-family: $base-font-family;
+  .navbar-header {
+    width: 100%;
+    /* masthead title */
+    h1,.navbar-brand {
+      font-size: $navbar-font-size;
+      font-weight: $navbar-font-weight;
+      color: $navbar-color;
+    }
+    .navbar-brand {
+      height: inherit;
+    }
+    .navbar-form {
+      margin-top: 15px;
+    }
+    .form-group {
+      label span {
+        color: $navbar-color;
+        font-weight: normal;
+      }
+    }
+  }
+}
+
+#headerContainer {
+  .panel {
+    .panel-pick-up {
+    }
+    .panel-drop-off {
+    }
+    .panel-heading {
+      h2, h3, h4 {
+        font-weight: bold;
+        color: $subtitle-bg-color;
+      }
+    }
+    span.glyphicon {
+      padding-right: 20px;
+    }
+  }
+}
+#resultsContainer {
+  .panel {
+    background-color: $panel-bg-color;
+    border: $panel-border;
+    border-left: $panel-border-left;
+    border-radius: $panel-border-radius;
+    /*
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    */
+    .panel-heading {
+      h2, h3, h4, h5, h6 {
+        display: inline-block;
+        width: 50%;
+        color: $navbar-bg-color;
+        font-weight: bold;
+        span:first-child {
+          @include heading-small-text;
+        }
+      }
+      ul.list-inline.icons {
+        float: right;
+        li {
+          padding-top: 10px;
+        }
+      }
+    }
+    .panel-body {
+      &.flex-row {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    .panel-col {
+      padding-left: 8px;
+      padding-right: 8px;
+      &.left {
+
+      }
+      &.middle{
+        display: flex;
+        flex: 1 1 100%;
+        border-left: $panel-border;
+      }
+      &.right {
+        display: flex;
+        flex: 1 1 180px;
+        justify-content: center;
+        flex-direction: column;
+        border-left: $panel-border;
+      }
+      .price {
+        font-size: 1.4em;
+        font-weight: bold;
+        margin: 0 auto;
+      }
+    }
+    img.img-vehicle {
+      max-width: 160px;
+      margin-right: 12px;
+      margin-bottom: 6px;
+    }
+    &.panel-alamo {
+      border-left: $panel-border-alamo;
+      h2,h3,h4,.price {
+        color: $color-alamo;
+      }
+      ul.labelled-values {
+        label {
+          color: $color-alamo;
+        }
+      }
+    }
+    &.panel-avis {
+      border-left: $panel-border-avis;
+      h2,h3,h4,.price {
+        color: $color-avis;
+      }
+      ul.labelled-values {
+        label {
+          color: $color-avis;
+        }
+      }
+    }
+    &.panel-hertz {
+      border-left: $panel-border-hertz;
+      h2,h3,h4,.price {
+        color: $color-hertz;
+      }
+      ul.labelled-values {
+        label {
+          color: $color-hertz;
+        }
+      }
+    }
+    .vendor-icon {
+      display: block;
+      margin: 0 auto;
+      width: 55%;
+    }
+    ul.labelled-values {
+      li {
+        span {
+          color: $cool-grey;
+        }
+      }
+    }
+  }
+  span.glyphicon-ok {
+    color: green;
+  }
+  span.glyphicon-ok-sign {
+    color: green;
+  }
+}
+
+footer {
+}
+
+#footerContainer {
+  background-color: $navbar-bg-color;
+  h4 {
+    margin: 8px 12px;
+    text-align: center;
+    color: $navbar-color;
+    color: #fff;
+    font-weight: normal;
+    font-size: 1em;
+  }
+  a {
+    color: #6cf;
+  }
+}
+
+/* semantic bootstrap tweaks */

@@ -1,0 +1,63 @@
+<div class="container" ng-controller="resultsCtrl">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="row title-row">
+        <h3>{{labels.title}}</h3>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <!-- output results listing -->
+          <ul class="list-unstyled">
+            <li ng-repeat="result in model.results" data-id="{{result.id}}">
+              <!-- result panel template -->
+              <div class="panel panel-default panel-{{result.vendorName | lowercase}}">
+                <div class="panel-heading">
+                    <h4 ng-bind-html="result.Vehicle.VehMakeModel['@Name'] | wrapInnerTextWithTag:'or similar':'span'"></h4>
+                  <ul class="list-inline icons">
+                    <li>
+                      <span class="glyphicon glyphicon-star"></span>
+                    </li>
+                    <li>
+                     <span class="glyphicon glyphicon-ok-sign"></span>
+                    </li>
+                    <li>
+                      <span class="glyphicon glyphicon-asterisk"></span>
+                    </li>
+                    <li>
+                      <span class="glyphicon glyphicon-check"></span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="panel-body flex-row">
+                  <!-- panel-l-col -->
+                  <div class="panel-col left">
+                    <img class="img-vehicle" ng-src="{{result.Vehicle.PictureURL}}" />
+                    <span class="vendor-icon">
+                      <img title="{{result.vendorName}}" alt="{{result.vendorName}}" class="vendor" ng-src="{{model.cdn}}{{result.vendorImage}}" />
+                    </span>
+                  </div>
+                  <!-- panel-m-col -->
+                  <div class="panel-col middle">
+                    <ul class="list-unstyled labelled-values">
+                      <li ng-repeat="tuple in labels.vehicleProps">
+                        <div ng-repeat="(key, value) in tuple" ng-if="result.Vehicle[key]">
+                          <label>{{value}}:</label>
+                          <span ng-bind-html="result.Vehicle[key] | mapSymbol | trust"></span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- panel-r-col -->
+                  <div class="panel-col right">
+                    <div class="price">
+                      <span ng-bind-html="result.TotalCharge['@CurrencyCode'] | mapSymbol | trust"></span><span>{{result.TotalCharge['@EstimatedTotalAmount']}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+   </div>
+</div>

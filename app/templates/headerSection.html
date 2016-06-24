@@ -1,0 +1,123 @@
+<div class="container" ng-controller="headerCtrl">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="row title-row">
+        <h2>{{labels.title}}</h2>
+      </div>
+      <div class="row">
+        <!-- pickUp -->
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <div class="panel panel-default panel-pick-up">
+            <div class="panel-heading">
+              <h4><span class="glyphicon glyphicon-arrow-up"></span>{{labels.panels.pickUp.title}}</h4>
+            </div>
+            <div class="panel-body">
+              <form class="form-horizontal">
+                <!-- pickUp location -->
+                <div class="form-group">
+                  <label for="pickUpLocation" class="col-sm-3 control-label">
+                    {{labels.panels.pickUp.location}}
+                  </label>
+                  <div class="col-sm-9">
+                    <div uib-dropdown is-open="dropDown.pickUp.isOpen" class="btn-group">
+                      <button id="pickUpLocation" type="button" class="btn btn-primary form-control" uib-dropdown-toggle ng-disabled="disabled">
+                        {{model.data.PickUpLocation}} &nbsp;<span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+                        <li role="menuitem" ng-repeat="item in model.pickUpLocations" data-id="item.id"><a href="#">{{item.name}}</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!-- pickUp date -->
+                <div class="form-group">
+                  <label for="pickUpDate" class="col-sm-3 control-label">
+                    {{labels.panels.pickUp.date}}
+                  </label>
+                  <div class="col-sm-9">
+                    <div class="input-group">
+                      <input type="text" id="pickUpDate" class="form-control" uib-datepicker-popup="{{datePickerPopUp.pickUp.format}}" ng-model="model.data.PickUpDate" is-open="datePickerPopUp.pickUp.isOpen" datepicker-options="datePickerPopUp.options" ng-required="true" close-text="{{datePickerPopUp.pickUp.closeText}}" alt-input-formats="datePickerPopUp.pickUp.altInputFormats" />
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="datePickerPopUp.pickUp.open()"><i class="glyphicon glyphicon-calendar"></i></button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <!-- pickUp time -->
+                <div class="form-group">
+                  <label for="pickUpTime" class="col-sm-3 control-label">
+                    {{labels.panels.pickUp.time}}
+                  </label>
+                  <div class="col-sm-9">
+                    <div class="input-group">
+                      <uib-timepicker id="pickUpTime" ng-model="model.data.PickUpTime" ng-change="timePicker.pickUp.changed()" hour-step="1" minute-step="15" show-meridian="true" />
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="datePickerPopUp.pickUp.open()"><i class="glyphicon glyphicon-calendar"></i></button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- dropOff -->
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <div class="panel panel-default panel-drop-off">
+            <div class="panel-heading">
+              <h4><span class="glyphicon glyphicon-arrow-down"></span>{{labels.panels.dropOff.title}}</h4>
+            </div>
+            <div class="panel-body">
+              <form class="form-horizontal">
+                <!-- dropOff location -->
+                <div class="form-group">
+                  <label for="dropOffLocation" class="col-sm-3 control-label">
+                    {{labels.panels.dropOff.location}}
+                  </label>
+                  <div class="col-sm-9">
+                    <div uib-dropdown is-open="dropDown.pickUp.isOpen" class="btn-group">
+                      <button id="dropOffLocation" type="button" class="btn btn-primary form-control" uib-dropdown-toggle ng-disabled="disabled">
+                        {{model.data.ReturnLocation}} &nbsp;<span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+                        <li role="menuitem" ng-repeat="item in model.dropOffLocations" data-id="item.id"><a href="#">{{item.name}}</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!-- dropOff date -->
+                <div class="form-group">
+                  <label for="dropOffDate" class="col-sm-3 control-label">
+                    {{labels.panels.dropOff.date}}
+                  </label>
+                  <div class="col-sm-9">
+                    <div class="input-group">
+                      <input type="text" id="dropOffDate" class="form-control" uib-datepicker-popup="{{datePickerPopUp.dropOff.format}}" ng-model="model.data.ReturnDate" is-open="datePickerPopUp.dropOff.isOpen" datepicker-options="datePickerPopUp.options" ng-required="true" close-text="{{datePickerPopUp.dropOff.closeText}}" alt-input-formats="datePickerPopUp.dropOff.altInputFormats" />
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="datePickerPopUp.dropOff.open()"><i class="glyphicon glyphicon-calendar"></i></button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <!-- dropOff time -->
+                <div class="form-group">
+                  <label for="dropOffTime" class="col-sm-3 control-label">
+                    {{labels.panels.dropOff.time}}
+                  </label>
+                  <div class="col-sm-9">
+                    <div class="input-group">
+                      <uib-timepicker id="dropOffTime" ng-model="model.data.ReturnTime" ng-change="timePicker.dropOff.changed()" hour-step="1" minute-step="15" show-meridian="true" />
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="datePickerPopUp.dropOff.open()"><i class="glyphicon glyphicon-calendar"></i></button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,189 @@
+/* main app.scss stylesheet */
+/* not importing bootstrap as it messes up font glyphicons so we manually declare it in the index
+@import 'bootstrap';
+*/
+/* variables used by app.scss */
+/* base */
+/* colors */
+/* preloader */
+/* navbar */
+/* header */
+/* title row headers */
+/* panel styles */
+/* mixins used by app.scss */
+/* customisations - theme */
+html, body {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #000000;
+  background-color: #f4f4f4; }
+
+.bg-curtain {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 9999;
+  opacity: 0.5;
+  color: #fff; }
+  .bg-curtain.hide {
+    visibility: hidden;
+    display: none; }
+  .bg-curtain div.loadingWidget {
+    width: 50%;
+    margin: 220px auto; }
+    .bg-curtain div.loadingWidget h2, .bg-curtain div.loadingWidget h3, .bg-curtain div.loadingWidget h4, .bg-curtain div.loadingWidget h5 {
+      text-align: center;
+      color: #fff; }
+
+header {
+  text-align: center;
+  background-color: #18bc9c;
+  background-size: 30px 30px;
+  background-color: #DDDDDD;
+  background: repeating-linear-gradient(135deg, #DDDDDD, #DDDDDD 13px, #EEEEEE 0, #EEEEEE 26px); }
+  header .container {
+    padding-top: 64px;
+    padding-bottom: 0px; }
+  header form {
+    text-align: left; }
+
+.panel-body form .form-group:last-child {
+  margin-bottom: 0; }
+  .panel-body form .form-group:last-child label {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); }
+
+.title-row h2, .title-row h3, .title-row h4, .title-row h5 {
+  margin-top: 10;
+  margin-bottom: 20;
+  padding: 12px 0;
+  background-color: #2091EB;
+  color: #ffffff;
+  text-align: center; }
+.title-row.subtitle-row {
+  background-color: #2091EB;
+  color: #ffffff; }
+  .title-row.subtitle-row h3 {
+    font-size: 1.2em; }
+
+/* id containers for specific styles */
+#navbarContainer {
+  background-color: #073590;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  #navbarContainer .navbar-header {
+    width: 100%;
+    /* masthead title */ }
+    #navbarContainer .navbar-header h1, #navbarContainer .navbar-header .navbar-brand {
+      font-size: 1.6em;
+      font-weight: 700;
+      color: #ffffff; }
+    #navbarContainer .navbar-header .navbar-brand {
+      height: inherit; }
+    #navbarContainer .navbar-header .navbar-form {
+      margin-top: 15px; }
+    #navbarContainer .navbar-header .form-group label span {
+      color: #ffffff;
+      font-weight: normal; }
+
+#headerContainer .panel .panel-heading h2, #headerContainer .panel .panel-heading h3, #headerContainer .panel .panel-heading h4 {
+  font-weight: bold;
+  color: #2091EB; }
+#headerContainer .panel span.glyphicon {
+  padding-right: 20px; }
+
+#resultsContainer .panel {
+  background-color: #fff;
+  border: 1px solid #D2D6D9;
+  border-left: 8px solid #2091EB;
+  border-radius: 5px;
+  /*
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  */ }
+  #resultsContainer .panel .panel-heading h2, #resultsContainer .panel .panel-heading h3, #resultsContainer .panel .panel-heading h4, #resultsContainer .panel .panel-heading h5, #resultsContainer .panel .panel-heading h6 {
+    display: inline-block;
+    width: 50%;
+    color: #073590;
+    font-weight: bold; }
+    #resultsContainer .panel .panel-heading h2 span:first-child, #resultsContainer .panel .panel-heading h3 span:first-child, #resultsContainer .panel .panel-heading h4 span:first-child, #resultsContainer .panel .panel-heading h5 span:first-child, #resultsContainer .panel .panel-heading h6 span:first-child {
+      font-size: x-small;
+      color: #999999; }
+  #resultsContainer .panel .panel-heading ul.list-inline.icons {
+    float: right; }
+    #resultsContainer .panel .panel-heading ul.list-inline.icons li {
+      padding-top: 10px; }
+  #resultsContainer .panel .panel-body.flex-row {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+  #resultsContainer .panel .panel-col {
+    padding-left: 8px;
+    padding-right: 8px; }
+    #resultsContainer .panel .panel-col.middle {
+      display: flex;
+      flex: 1 1 100%;
+      border-left: 1px solid #D2D6D9; }
+    #resultsContainer .panel .panel-col.right {
+      display: flex;
+      flex: 1 1 180px;
+      justify-content: center;
+      flex-direction: column;
+      border-left: 1px solid #D2D6D9; }
+    #resultsContainer .panel .panel-col .price {
+      font-size: 1.4em;
+      font-weight: bold;
+      margin: 0 auto; }
+  #resultsContainer .panel img.img-vehicle {
+    max-width: 160px;
+    margin-right: 12px;
+    margin-bottom: 6px; }
+  #resultsContainer .panel.panel-alamo {
+    border-left: 8px solid #0067AC; }
+    #resultsContainer .panel.panel-alamo h2, #resultsContainer .panel.panel-alamo h3, #resultsContainer .panel.panel-alamo h4, #resultsContainer .panel.panel-alamo .price {
+      color: #0067AC; }
+    #resultsContainer .panel.panel-alamo ul.labelled-values label {
+      color: #0067AC; }
+  #resultsContainer .panel.panel-avis {
+    border-left: 8px solid #D30029; }
+    #resultsContainer .panel.panel-avis h2, #resultsContainer .panel.panel-avis h3, #resultsContainer .panel.panel-avis h4, #resultsContainer .panel.panel-avis .price {
+      color: #D30029; }
+    #resultsContainer .panel.panel-avis ul.labelled-values label {
+      color: #D30029; }
+  #resultsContainer .panel.panel-hertz {
+    border-left: 8px solid #000000; }
+    #resultsContainer .panel.panel-hertz h2, #resultsContainer .panel.panel-hertz h3, #resultsContainer .panel.panel-hertz h4, #resultsContainer .panel.panel-hertz .price {
+      color: #000000; }
+    #resultsContainer .panel.panel-hertz ul.labelled-values label {
+      color: #000000; }
+  #resultsContainer .panel .vendor-icon {
+    display: block;
+    margin: 0 auto;
+    width: 55%; }
+  #resultsContainer .panel ul.labelled-values li span {
+    color: #999999; }
+#resultsContainer span.glyphicon-ok {
+  color: green; }
+#resultsContainer span.glyphicon-ok-sign {
+  color: green; }
+
+#footerContainer {
+  background-color: #073590; }
+  #footerContainer h4 {
+    margin: 8px 12px;
+    text-align: center;
+    color: #ffffff;
+    color: #fff;
+    font-weight: normal;
+    font-size: 1em; }
+  #footerContainer a {
+    color: #6cf; }
+
+/* semantic bootstrap tweaks */
+
+/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,41 @@
+/* variables used by app.scss */
+
+/* base */
+$base-font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$body-color: #000000;
+$body-bg-color: #f4f4f4;
+
+/* colors */
+$cool-grey: #999999;
+$light-grey: #D2D6D9;
+
+/* preloader */
+$preloader-curtain-bg-color: #000;
+
+/* navbar */
+$navbar-bg-color: #073590;
+$navbar-color: #ffffff;
+$navbar-font-size: 1.6em;
+$navbar-font-weight: 700;
+
+/* header */
+$header-bg-color: #18bc9c;
+
+/* title row headers */
+$title-bg-color: #2091EB;
+$title-color: #ffffff;
+$subtitle-bg-color: #2091EB;
+$subtitle-color: #ffffff;
+
+/* panel styles */
+$panel-bg-color: #fff;
+$panel-border: 1px solid $light-grey;
+$panel-border-left: 8px solid $title-bg-color;
+$panel-border-radius: 5px;
+$panel-label-color: #292;
+$color-alamo: #0067AC;
+$color-avis: #D30029;
+$color-hertz: #000000;
+$panel-border-alamo: 8px solid $color-alamo;
+$panel-border-avis: 8px solid $color-avis;
+$panel-border-hertz: 8px solid $color-hertz;

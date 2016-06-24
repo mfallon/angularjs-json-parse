@@ -1,0 +1,22 @@
+/* mixins used by app.scss */
+
+@mixin header-background($color1:#DDDDDD, $color2:#EEEEEE, $size:30px 30px, $stripe1_distance: 13px, $stripe2_distance: 26px, $angle: 135deg) {
+  background-size: $size;
+  $primaryC:$color1;
+  $secondaryC:$color2;
+  background-color:$color1;
+  background: repeating-linear-gradient($angle, $primaryC, $primaryC $stripe1_distance, $secondaryC 0, $secondaryC $stripe2_distance);
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin heading-small-text {
+  font-size: x-small;
+  color: $cool-grey;
+}
